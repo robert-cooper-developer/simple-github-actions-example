@@ -1,0 +1,18 @@
+# .github/workflows/notify-endpoint.yml
+name: Notify Endpoint on Push
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Send POST request to endpoint
+        run: |
+          curl -X POST ${{ secrets.API_ENDPOINT }}
+        env:
+          API_ENDPOINT: ${{ secrets.API_ENDPOINT }}
