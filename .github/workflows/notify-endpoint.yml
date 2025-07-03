@@ -1,4 +1,3 @@
-# .github/workflows/notify-endpoint.yml
 name: Notify Endpoint on Push
 
 on:
